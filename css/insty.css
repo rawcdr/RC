@@ -1,0 +1,760 @@
+@import url('https://fonts.cdnfonts.com/css/cascadia-code');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Cascadia Code', sans-serif;
+}
+
+:root{
+    --bg-color: #111111;
+    --second-bg-color: rgb(43, 42, 42);
+    --text-color: white;
+    --main-color:#04fffb;
+
+    
+    --color-primary: #fead53;
+    --color-background: #000000;
+    --color-text-light: #ffffff;
+    --color-text-dark: #333333;
+    --transition-speed: 0.3s;
+    --max-width: 1650px;
+}
+
+html{
+    overflow-x: hidden;
+}
+
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+/* Header & Navigation */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.nav {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_logo {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav_logo img {
+    height: 60px;
+    width: auto;
+    transition: transform var(--transition-speed);
+}
+
+.nav_logo img:hover {
+    transform: scale(1.1);
+}
+
+.nav_links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav_links.active {
+    display: flex;
+}
+
+.nav_links a {
+    color: var(--color-text-light);
+    font-size: 1.1rem;
+    transition: color var(--transition-speed);
+    position: relative;
+}
+
+.nav_links a:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: width var(--transition-speed);
+}
+
+.nav_links a:hover:after,
+.nav_links a.active:after {
+    width: 100%;
+}
+
+.nav_links a:hover,
+.nav_links a.active {
+    color: var(--color-primary);
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+@media (min-width: 972px) {
+    .hamburger {
+        display: none !important;
+    }
+
+    .nav {
+        display: flex !important;
+    }
+}
+
+@media (max-width: 972px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav_links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        padding: 2rem;
+        width: 100%;
+        gap: 1.5rem;
+        z-index: 100;
+    }
+
+    .nav_links .active {
+        display: flex;
+    }
+
+    .nav_logo img {
+        height: 50px;
+    }
+
+    .nav_links a {
+        font-size: 1.4rem;
+    }
+}
+
+/*hero section*/
+
+.first_screen {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("/assets1/possessed-photography-U3sOwViXhkY-unsplash.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.first_screen a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #fff;
+    font-size: 6rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    color: #fff;
+    overflow: hidden;
+}
+
+a span {
+    display: inline-block;
+    position: relative;
+    transition: 1.0s;
+}
+
+a span:nth-child(odd):before {
+    content: attr(data-text);
+    position: absolute;
+    transform: translateY(200%);
+}
+
+a span:nth-child(odd) {
+    transform: translateY(-200%);
+}
+
+a:hover span:nth-child(odd) {
+    transform: translateY(0);
+}
+
+a span:nth-child(even):before {
+    content: attr(data-text);
+    position: absolute;
+    transform: translateY(-200%);
+}
+
+a span:nth-child(even) {
+    transform: translateY(200%);
+}
+
+a:hover span:nth-child(even) {
+    transform: translateY(0);
+}
+
+@media screen and (max-width: 768px) {
+    a {
+        width: 90%;
+        height: 150px;
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    a {
+        width: 95%;
+        height: 120px;
+        font-size: 3rem;
+        border-width: 3px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    a {
+        height: 100px;
+        font-size: 2.5rem;
+        border-width: 2px;
+    }
+}
+
+
+
+
+section{
+    min-height: 100vh;
+    padding: 10rem 9% 10rem;
+}
+
+
+/* Department 2nd Page */
+.dept_two{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    position: relative;
+    overflow: hidden;
+
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("/assets1/neon-sumer-K8eWS_abimM-unsplash.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.dept_two::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#000,#6d6767,#000);
+    clip-path: circle(40% at right 70%);
+}
+
+.dept_two::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#000,#d1cfcf);
+    clip-path: circle(35% at 10% 10%);
+}
+
+.container{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 2200px;
+    width: 55%;
+    flex-wrap: wrap;
+    gap:40px 20px;
+    margin-top: 85px;
+    z-index: 1;
+}
+
+.container .card{
+    position: relative;
+    flex: 1 1 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+    height: 300px;
+    width: 300px;
+
+    margin: 50px 0px;
+
+
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.container .card .content{
+    padding: 20px;
+    text-align: center;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.container .card:hover .content{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.container .card .content h2{
+    position: absolute;
+    margin-top: 5px;
+    top: -80px;
+    right: 30px;
+    font-size: 11em;
+    color: rgb(150, 150, 150);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.container .card .content h3{
+    font-size: 3em;
+    color: #fff;
+    z-index: 1;
+    margin-top: 10px;
+}
+
+.container .card .content a{
+    position: relative;
+    display: inline-block;
+    padding: 12px 30px;
+    margin-top: 15px;
+    background: #fff;
+    color: #000;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.2em;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* BOARD */
+
+.board {
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("/assets1/neon-sumer-K8eWS_abimM-unsplash.jpg");
+    background-position: center;
+    background-size: cover;
+    align-items: center;
+    background-repeat: no-repeat;
+
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+    color: white;
+}
+
+.un{
+    width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.board h2 span{
+    color: #fff;
+    text-shadow: 0 0 50px #fff;
+}
+
+.board-img{
+    margin-top: 90px;
+    border-radius: 10%;
+}
+
+.board-img img{
+    position: relative;
+    height: 450px;
+    width: auto;
+    border-radius: 15%;
+    top: 1rem;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+
+.heading{
+    text-align: center;
+    font-size: 4.5rem;
+}
+.board-content{
+    padding-right: 20px;
+}
+
+.board-content h2{
+    text-align: left;
+}
+
+.board-content .p{
+    line-height: 2;
+}
+
+.board-content h3{
+    color: var(--color-primary);
+    font-size: 3.5rem;
+    padding-bottom: 15px;
+}
+
+.board-content p{
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+
+.board-content .text-animation span::before{
+    content: 'Robotics Club';
+    color: #000;
+    -webkit-text-stroke: 2px #fff;
+    text-stroke: 2px #fff;
+    animation: words 20s infinite;
+}
+
+.board-content .text-animation span::after{
+    content: "";
+    background-color: var(--second-bg-color);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid var(--second-bg-color);
+    right: -8px;
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+
+
+/* Project-Teach */
+/* General section styling */
+
+.section-light {
+    height: 100vh;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("/assets1/neon-sumer-K8eWS_abimM-unsplash.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.section-dark {
+    height: 100vh;
+    background-color: #000;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("/assets1/neon-sumer-K8eWS_abimM-unsplash.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+
+.class {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.class > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.row{
+    width: 1500px;
+}
+
+.image {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.image img {
+    width: auto;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.text {
+    flex: 0 0 70%;
+    padding: 20px;
+}
+
+.text h2 {
+    font-size: 3em;
+    color: var(--color-primary);
+    margin-bottom: 30px;
+}
+
+.text p {
+    font-size: 1.5em;
+    line-height: 1.6;
+}
+
+/* Footer */
+
+.active-section {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: Arial, sans-serif; */
+
+    background-color: #000;
+    color: #fff;
+    
+    background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("/assets1/neon-sumer-K8eWS_abimM-unsplash.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    max-width: 900%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Discover Our Activeness Heading */
+
+.fottop{
+    height: 40vh;
+}
+.heading {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.heading h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 120px;
+    margin-bottom: 100px;
+    color: var(--color-primary);
+    letter-spacing: 1px;
+}
+
+
+/* Stats Container */
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0;
+    margin-bottom: 100px;
+}
+
+.stat-item h2 {
+    font-size: 2em;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out;
+    padding-bottom: 10px;
+}
+
+.stat-item p {
+    font-size: 2.1em;
+    /* margin-top: 10px; */
+    font-weight: bold;
+}
+
+/* Zoom Effect */
+.zoom-effect:hover {
+    transform: scale(1.3);
+    color: var(--color-primary);
+}
+
+/* Divider */
+hr {
+    border: 1px solid var(--color-primary);
+    margin: 20px 0;
+}
+
+/* Bottom Container */
+.bottom-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 6em;
+    height: 28vh;
+    gap: 20px;
+}
+
+/* Logo Section */
+.logo-section {
+    margin-top: 1rem;
+    flex: 1;
+    text-align: center;
+}
+
+.logo-section img {
+    height: 85px;
+    width: auto;
+    margin: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo-section img:hover {
+    transform: scale(1.1);
+}
+
+.logo-section p {
+    margin-top: 20px;
+    font-size: 1.5em;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo-section p:hover {
+    transform: scale(1.1);
+}
+
+/* Navigation Section */
+.nav-section {
+    margin-top: 0.5rem;
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* gap: 10px; */
+    justify-items: left;
+}
+
+.nav-btn {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.40em;
+    padding: 10px 20px;
+    /* background-color: #000; */
+    border-radius: 10px;
+    text-align: left;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.nav-btn:hover {
+    transform: translateY(-5px) scale(1.1);
+    /* background-color: #000; */
+}
+
+/* Recruitment Section */
+.recruit-section {
+    margin-top: .80rem;
+    flex: 1;
+    text-align: left;
+}
+
+.recruit-section h3 {
+    font-size: 2em;
+    margin-bottom: 7px;
+    color: var(--color-primary);
+}
+
+.mail-btn button {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.mail-btn button:hover {
+    background-color: var(--color-primary);
+    transform: scale(1.1) rotate(-3deg);
+}
+
+.recruit-section p {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+.al{
+    color: var(--color-primary);
+}
+
+.recruit-section p.quote {
+    font-style: italic;
+    font-size: 1.1em;
+    color: #986060;
+    margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    margin-top: 15px;
+    font-size: 1.4em;
+    text-align: center;
+}

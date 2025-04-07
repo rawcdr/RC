@@ -1,0 +1,497 @@
+@import url('https://fonts.cdnfonts.com/css/cascadia-code');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Cascadia Code', sans-serif;
+}
+
+:root{
+    --bg-color: #111111;
+    --second-bg-color: rgb(43, 42, 42);
+    /* --text-color: white; */
+    --main-color:#04fffb;
+
+    --title-color: hsl(0, 0%, 15%);
+    --text-color: hsl(0, 0%, 35%);
+
+    
+  --h2-font-size: 1.25rem;
+  --small-font-size: .813rem;
+}
+
+html{
+    font-size: 72.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 9%;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 3rem;
+    color: var(--text-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin-right: 5px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    gap: 5px;
+}
+
+
+.logo:hover{
+    transform: scale(1.1);
+}
+
+.navbar a{
+    font-size: 1.6rem;
+    color: white;
+    margin-left: 3rem;
+    font-weight: 500;
+    transition: 0.3s ease-in-out;
+    border-bottom: 3px solid transparent;
+}
+
+.navbar a:hover, .navbar a.active{
+    color: #fead53;
+    border-bottom: 3px solid #fead53;
+}
+
+#menu-icon{
+    font-size: 3.6rem;
+    color: var(--main-color);
+    display: none;
+}
+
+section{
+    min-height: 100vh;
+    padding: 10rem 9% 10rem;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+/* Landing Page */
+
+
+
+section.land {
+    background-color: #000; /* Set background to black */
+    color: #fff; /* Ensure text is visible against dark background */
+    padding: 20px; /* Add some padding for aesthetics */
+}
+
+section.land .bigbox {
+    display: flex;
+    flex-direction: row; /* Set layout direction to row */
+    justify-content: center; /* Center the bigbox horizontally */
+    align-items: center; /* Center content vertically */
+    gap: 10px; /* Add a 10px gap between child elements */
+    max-width: 1500px; /* Limit the width for better readability */
+    margin: 12em auto; /* Center the bigbox */
+}
+
+
+section.land .box1 {
+    flex: 65%; /* Allocate 75% of space to box1 */
+}
+
+section.land .box2 {
+    flex: 35%; /* Allocate 25% of space to box2 */
+    display: flex; /* Added to center the image inside */
+    justify-content: center; /* Horizontally center image */
+    align-items: center;
+}
+
+section.land .box1 img {
+    width: auto;
+    height: 110px;
+}
+
+.club{
+    font-size: 6em;
+    padding-left: 15px;
+}
+
+.deg{
+    color: #fead53;
+}
+
+.clg{
+    font-size: 5em;
+    padding-left: 15px;
+}
+
+section.land .box2 img {
+    max-width: 100%; /* Ensure the image scales correctly */
+    width: auto;
+    height: 50em;
+    border-radius: 10%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section.land .box2 img:hover {
+    transform: scale(1.1); /* Zoom the image slightly */
+    box-shadow:0 0  20px #fead53; /* Add a shadow with color #fead53 */
+} */
+
+section.land .club,
+section.land .clg {
+    margin: 10px 0;
+}
+
+section.land .id {
+    font-size: 1.5rem;
+    width: 90%;
+    line-height: 1.6;
+    margin-top: 35px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+}
+
+section.land .quote {
+    font-style: italic;
+    font-size: 2.2rem;
+    padding-left: 15px;
+    color: #fff; /* Use a contrasting color (tomato) for emphasis */
+    margin-top: 35px;
+}
+
+.a{
+    overflow: hidden;
+    width: 1500px;
+    margin: 0 auto;
+}
+
+/* page */
+.idr{
+    width: 100%;
+}
+
+.stock-ticker {
+    font-size: 1.6rem;
+    padding-block: 8px;
+    /* border-block: 1px solid; */
+    overflow: hidden;
+    user-select: none;
+    color: #fff;
+  
+    --gap: 150px;
+    display: flex;
+    gap: var(--gap);
+  }
+  
+  .stock-ticker ul {
+    list-style: none;
+    flex-shrink: 0;
+    min-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--gap);
+  
+    animation: scroll 20s linear infinite;
+  }
+  
+  .stock-ticker:hover ul {
+    animation-play-state: paused;
+  }
+  
+  @keyframes scroll {
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  
+  
+  .stock-ticker .company,
+  .stock-ticker .price {
+    font-weight: bold;
+  }
+  
+  .stock-ticker .price {
+    margin-inline: 4px;
+  }
+  
+/* idr */
+
+.oir{
+    color: #fead53;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 4em;
+    margin-top: 1rem;
+}
+
+.bigbox1 {
+    margin-top: 10em;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 1800px;
+    align-items: center;
+    justify-content: center; /* Centers items vertically */
+    gap: 15px;
+}
+
+.bx1, .bx2, .bx3, .bx4, .bx5, .bx6, .bx7 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Centers content within the row */
+    align-items: center; /* Aligns items vertically within the row */
+    margin: 1rem 0; /* Adds some spacing between rows */
+    width: 80%; /* Optional: Adjusts the width for better centering */
+    /* text-align: left; */
+    height: 40vh;
+}
+
+.left {
+    flex: 65%;
+    text-align: center; /* Centers text inside the left section */
+}
+
+.right {
+    flex: 35%;
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center; /* Centers the image vertically */
+}
+
+.cmp{
+    color: #fead53;
+    font-size: 3em;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    /* text-decoration:underline; */
+}
+
+.exp{
+    text-align: left;
+    font-size: 20px;
+    line-height: 1.3;
+    padding-bottom: 20px;
+}
+
+.km{
+    font-size: 2em;
+    text-decoration: underline;
+    color: grey;
+    padding-top: 15px;
+    text-align: left;
+}
+
+
+/* last */
+/* General Reset */
+
+.active-section {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+
+    background-color: #000;
+    color: #fff;
+
+    max-width: 900%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Discover Our Activeness Heading */
+
+.fottop{
+    height: 40vh;
+}
+.heading {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.heading h1 {
+    font-size: 4.65em;
+    font-weight: bold;
+    margin-top: 135px;
+    margin-bottom: 120px;
+    color: #FEAD53;
+    letter-spacing: 1px;
+}
+
+
+/* Stats Container */
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0;
+}
+
+.stat-item h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out;
+}
+
+.stat-item p {
+    font-size: 2.5em;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Zoom Effect */
+.zoom-effect:hover {
+    transform: scale(1.3);
+    color: #FEAD53;
+}
+
+/* Divider */
+hr {
+    border: 1px solid #FEAD53;
+    margin: 20px 0;
+}
+
+/* Bottom Container */
+.bottom-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 8.5rem;
+    gap: 20px;
+}
+
+/* Logo Section */
+.logo-section {
+    margin-top: 1rem;
+    flex: 1;
+    text-align: center;
+}
+
+.logo-section img {
+    height: 90px;
+    width: auto;
+    margin: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo-section img:hover {
+    transform: scale(1.1);
+}
+
+.logo-section p {
+    margin-top: 20px;
+    font-size: 1.9em;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo-section p:hover {
+    transform: scale(1.1);
+}
+
+/* Navigation Section */
+.nav-section {
+    margin-top: 1.75rem;
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    justify-items: left;
+}
+
+.nav-btn {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.60em;
+    padding: 10px 20px;
+    background-color: #000;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.nav-btn:hover {
+    transform: translateY(-5px) scale(1.1);
+    background-color: #000;
+}
+
+/* Recruitment Section */
+.recruit-section {
+    margin-top: 1.90rem;
+    flex: 1;
+    text-align: left;
+}
+
+.recruit-section h3 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.mail-btn button {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.mail-btn button:hover {
+    background-color: #FEAD53;
+    transform: scale(1.1) rotate(-3deg);
+}
+
+.recruit-section p {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+.al{
+    color: #fead53;
+}
+
+.recruit-section p.quote {
+    font-style: italic;
+    font-size: 1.1em;
+    color: #986060;
+    margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    font-size: 1.7em;
+    text-align: center;
+}

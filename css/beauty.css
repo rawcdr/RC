@@ -1,0 +1,1056 @@
+@import url('https://fonts.cdnfonts.com/css/cascadia-code');
+
+:root{
+    --primary-color: #fead53;
+    --text-dark: #333333;
+    --text-light: #ffffff33;
+    --extra-light: #f3f4f6;
+    --transition-speed: 0.3s;
+    --max-width: 1650px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+}
+
+input::placeholder {
+    color: var(--extra-light);
+}
+
+body {
+    font-family: 'Cascadia Code', sans-serif;
+    line-height: 25px;
+    background-color: #000000;
+}
+
+
+
+/* Header & Navigation */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.nav {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_logo {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav_logo img {
+    height: 60px;
+    width: auto;
+    transition: transform var(--transition-speed);
+}
+
+.nav_logo img:hover {
+    transform: scale(1.1);
+}
+
+.nav_links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav_links.active {
+    display: flex;
+}
+
+.nav_links a {
+    color: var(--extra-light);
+    font-size: 1.1rem;
+    transition: color var(--transition-speed);
+    position: relative;
+}
+
+.nav_links a:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width var(--transition-speed);
+}
+
+.nav_links a:hover:after,
+.nav_links a.active:after {
+    width: 100%;
+}
+
+.nav_links a:hover,
+.nav_links a.active {
+    color: var(--primary-color);
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+@media (min-width: 972px) {
+    .hamburger {
+        display: none !important;
+    }
+
+    .nav {
+        display: flex !important;
+    }
+}
+
+@media (max-width: 972px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav_links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        padding: 2rem;
+        width: 100%;
+        gap: 1.5rem;
+        z-index: 100;
+    }
+
+    .nav_links .active {
+        display: flex;
+    }
+
+    .nav_logo img {
+        height: 50px;
+    }
+
+    .nav_links a {
+        font-size: 1.4rem;
+    }
+}
+
+
+
+/*Hero Page*/
+
+.background_container {
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("/assets/pexels-vanessa-loring-7869034.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    max-width: 1400px;
+    margin: auto;
+    padding: 2rem;
+    padding-top: 100px;
+    position: relative;
+}
+
+.container_left{
+    flex: 1;
+    display: flex;
+}
+
+.container_left .content {
+    max-width: 90%;
+    display: grid;
+    gap: 1rem;
+}
+
+.content h1 {
+    max-height: 200px;
+    font-size: 4rem;
+    line-height: 4rem;
+    color: var(--extra-light);
+    font-weight: 700;
+}
+
+.content h1 img:hover {
+    transform: scale(1.1);
+}
+
+.content h1 img {
+    height: 100px;
+    width: auto;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.bic{
+    font-size: smaller;
+}
+
+.content p{
+    color: var(--extra-light);
+    font-size: large;
+}
+
+.btns {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    gap: 1rem;
+}
+
+.btns button {
+    width: 120px;
+    height: 50px;
+    padding: 0.1rem 0.5rem;
+    color: var(--extra-light);
+    font-size: 1rem;
+    background-color: var(--primary-color);
+    outline: none;
+    border-style: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button .contact_us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: var(--text-dark);
+}
+
+button.contact_us:hover {
+    background-color: var(--text-light);
+}
+
+@media (max-width: 1024px) {
+    .content h1 img {
+        height: 50px;
+    }
+}
+
+
+
+/*Event Timeline*/
+
+.event-timeline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 1; 
+    /* min-width: 300px;  */
+    max-width: 35%; 
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--extra-light);
+    text-align: center;
+}
+
+.timeline {
+    margin: 1rem 0;
+    padding-left: 2rem;
+    border-left: 3px solid (--second-bg-color);
+}
+
+.timeline-item {
+    margin-bottom: 2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.timeline-content {
+    max-height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px); 
+    border-radius: 10px;
+    padding: 1.5rem;
+    position: relative;
+    left: -1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-content h2 {
+    font-size: 1.5rem;
+    color: var(--extra-light);
+}
+
+.timeline-content p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.timeline-content.ongoing {
+    border-left: 5px solid #28a745;
+}
+
+.timeline-content.upcoming {
+    border-left: 5px solid #ffc107;
+}
+
+.timeline-content:hover {
+    transform: scale(1.02);
+}
+
+
+@media screen and (max-width: 927px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container_left, 
+    .event-timeline {
+        display: block; 
+        width: 100%; 
+        margin: 0 auto; 
+    }
+
+    .container_left {
+        display: flex; 
+        flex-direction: column; 
+        align-items: center;
+        justify-content: center; 
+        text-align: center; 
+        width: 100%; 
+        margin: 0 auto;
+        padding-bottom: 20px;
+    }
+
+    .event-timeline {
+        margin-top: 20px;
+    }
+
+    .btns {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content h1 img {
+        display: none;
+    }
+}
+
+
+
+
+/*About Section*/
+
+.about_container  {
+    display: flex;
+    min-height: 100vh; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 10px 10px 10px;
+    padding: 40px;
+
+    background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("/assets/neon-sumer-K8eWS_abimM-unsplash.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+section .about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1400px;
+}
+section .img_container {
+    height: 400px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    flex-shrink: none;
+}
+
+section .img_container img {
+    width: 29em;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.img_container img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+section .description {
+    padding: 24px;
+    height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section .description h2 {
+    color: var(--primary-color);
+    padding: 1.5rem 0;
+    font-size: 2.5rem;
+    line-height: 50px;
+}
+
+section .description p {
+    color: var(--extra-light);
+    text-align: justify;
+}
+
+@media screen and (max-width: 927px) {
+    section .about {
+        flex-direction: column;
+        align-items: center; 
+        gap: 20px; 
+    }
+
+    section .about img {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 656px) {
+    section .about img {
+        width: 70%;
+    }
+}
+
+
+/*Sliding Window*/
+
+.sliding_images {
+    background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("/assets/neon-sumer-K8eWS_abimM-unsplash.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.sliding_images .section-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+.sliding_images .section-title {
+    color: var(--primary-color);
+    line-height: 50px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+
+.sliding_images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 9%;
+}
+
+.slide_container {
+    position: relative;
+    width: 80%;
+    max-width: 2000px;
+    aspect-ratio: 16/9;
+    height: 45%; 
+    border: 3px solid #ede6d6;
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 0 auto; 
+}
+
+.slide_container .slides {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide_container .slides img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slide_container .slides img.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.slide_container .slides img:not(.active) {
+    top: 0;
+    left: -100%;
+    pointer-events: none;
+}
+
+span.next, span.prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 14px;
+    color: #eee;
+    background-color: rgba(0,0,0,0.5);
+    font-size: 24px;
+    font-weight: bold;
+    transition: 0.5s;
+    border-radius: 3px;
+    user-select: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+span.next {
+    right: 10px;
+}
+
+span.prev {
+    left: 10px;
+}
+
+span.next:hover, span.prev:hover {
+    background-color: #ede6d6;
+    opacity: 0.8;
+    color: #222;
+}
+
+.dotsContainer {
+    width: 100%;
+    display: flex   ;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    position: absolute;
+    bottom: 10px;
+    z-index: 10;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dotsContainer .dot {
+    width: 12px;
+    height: 12px;
+    margin: 0px 5px;
+    border: 3px solid #bbb;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dotsContainer .active {
+    background-color: #555;
+}
+
+@keyframes next1 {
+    from {
+        left: 0%;
+    }
+    to {
+        left: -100%;
+    }
+}
+
+@keyframes next2 {
+    from {
+        left: 100%;
+    }
+    to {
+        left: 0%;
+    }
+}
+
+@keyframes prev1 {
+    from {
+        left: 0%;
+    }
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes prev2 {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 0%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .slide_container {
+        max-width: 90%;
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .slide_container {
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slide_container {
+        height: 250px;
+    }
+}
+
+
+/*Socials*/
+
+.ab{
+    margin-top: 1.3em;
+    margin-bottom: 1.3em;
+}
+
+.our_socials {
+    min-height: 100vh;
+    padding: 40px;
+    background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("/assets/neon-sumer-K8eWS_abimM-unsplash.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+.our_socials h1 {
+    color: var(--primary-color);
+    line-height: 50px;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.social_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+    width: 60%;
+    margin: 0 auto;
+    padding: 0 80px;
+    justify-content: center;
+    align-items: center;
+}
+
+.social_container .card {
+    position: relative;
+    height: 250px;
+    width: calc(35% - 1040px);
+    min-width: 300px;
+    background-color: #000000;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.social_container .card:hover {
+    transform: translateY(-10px);
+}
+
+.social_container .card .imgBx {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(20px);
+    height: calc(100% - 20px);
+    width: calc(100% - 20px);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.1);
+    -webkit-backdrop-filter: blur(20px);
+    transition: 0.5s ease-in-out;
+}
+
+.social_container .card:hover .imgBx {
+    height: 150px;
+    width: 150px;
+    left: -75px;
+    top: calc(50% - 75px);
+}
+
+.social_container .card .imgBx img {
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    image-rendering: -webkit-optimize-contrast;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social_container .card .content {
+    position: absolute;
+    right: 0;
+    width: calc(100% - 75px);
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social_container .card .content h3 {
+    color: #fff;
+    margin-bottom: 5px;
+    font-size: 24px;
+}
+
+.social_container .card .content a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 20px;
+    border-radius: 5px;
+    background: #0095ff;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.social_container .card .content p {
+    color: #f3f4f6;
+}
+
+@media (max-width: 927px) {
+    .social_container {
+        position: relative;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .social_container .card {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        flex-direction: column;
+        background: transparent;
+        margin: -20px 0;
+        box-shadow: none;
+    }
+
+    .social_container .card .imgBx {
+        position: relative;
+    }
+
+    .social_container .card .imgBx,
+    .social_container .card:hover .imgBx {
+        width: 80%;
+        height: 200px;
+        top: 100px;
+        left: 10%;
+    }
+
+    .social_container .card:hover .imgBx {
+        top: 80px;
+    }
+
+    .social_container .card .imgBx img,
+    .social_container .card:hover .imgBx img {
+        max-width: 100px;
+    }
+
+    .social_container .card .content {
+        position: relative;
+        width: 100%;
+        background: #fff;
+        box-shadow: none;
+        border-radius: 20px;
+        padding: 20px 40px 40px;
+        border-top: 100px solid #fff;
+    }
+}
+
+@media (max-width: 768px) {
+    .social_container {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .social_container .card {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (hover: hover) {
+    .social_container .card:hover {
+        transform: translateY(-10px);
+    }
+}
+
+
+@media screen and (max-width: 1080px) {
+    .about_container,
+    .sliding_images,
+    .our_socials {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("/assets/neon-sumer-K8eWS_abimM-unsplash.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+@media screen and (max-width: 656px) {
+    .background_container {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+/* Footer */
+
+.active-section {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: Arial, sans-serif; */
+
+    background-color: #000;
+    color: #fff;
+
+    max-width: 900%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("/assets/neon-sumer-K8eWS_abimM-unsplash.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+}
+
+/* Discover Our Activeness Heading */
+
+.fottop{
+    height: 35vh;
+}
+.heading {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.heading h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin-top: 120px;
+    margin-bottom: 120px;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+
+
+/* Stats Container */
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0;
+}
+
+.stat-item h2 {
+    font-size: 2em;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out;
+    padding-bottom: 10px;
+}
+
+.stat-item p {
+    font-size: 2.1em;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Zoom Effect */
+.zoom-effect:hover {
+    transform: scale(1.3);
+    color: var(--primary-color);
+}
+
+/* Divider */
+hr {
+    border: 1px solid var(--primary-color);
+    margin: 20px 0;
+}
+
+/* Bottom Container */
+.bottom-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 6em;
+    gap: 20px;
+}
+
+/* Logo Section */
+.logo-section {
+    margin-top: 1rem;
+    flex: 1;
+    text-align: center;
+}
+
+.logo-section img {
+    height: 85px;
+    width: auto;
+    margin: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo-section img:hover {
+    transform: scale(1.1);
+}
+
+.logo-section p {
+    margin-top: 20px;
+    font-size: 1.5em;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo-section p:hover {
+    transform: scale(1.1);
+}
+
+/* Navigation Section */
+.nav-section {
+    margin-top: 1.05rem;
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    justify-items: left;
+}
+
+.nav-btn {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.40em;
+    padding: 10px 20px;
+/*     background-color: #000; */
+    border-radius: 10px;
+    text-align: left;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.nav-btn:hover {
+    transform: translateY(-5px) scale(1.1);
+    background-color: transparent;
+}
+
+/* Recruitment Section */
+.recruit-section {
+    margin-top: 1.80rem;
+    flex: 1;
+    text-align: left;
+}
+
+.recruit-section h3 {
+    font-size: 2em;
+    margin-bottom: 17px;
+    color: var(--primary-color);
+}
+
+.mail-btn button {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.mail-btn button:hover {
+    background-color: var(--primary-color);
+    transform: scale(1.1) rotate(-3deg);
+}
+
+.recruit-section p {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+.al{
+    color: var(--primary-color);
+}
+
+.recruit-section p.quote {
+    font-style: italic;
+    font-size: 1.1em;
+    color: #986060;
+    margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    margin-top: 15px;
+    font-size: 1.4em;
+    text-align: center;
+}
+
