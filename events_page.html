@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Events</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav" role="navigation">
+            <div class="nav_logo">
+                <a href="#" aria-label="VITC Home">
+                    <img src="assets/vitc.png" alt="VITC Logo" loading="lazy">
+                </a>
+                <a href="#" aria-label="RC Home">
+                    <img src="assets/rc.png" alt="RC Logo" loading="lazy">
+                </a>
+            </div>
+
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <i class="ri-menu-line" aria-hidden="true"></i>
+            </button>
+
+            <div class="nav_links">
+                <a href="/index.html">Home</a>
+                <a href="/index.html#about">About</a>
+                <a href="/dept.html">Departments</a>
+                <a href="/mem.html">Members</a>
+                <a href="/events_page.html"   class="active">Events</a>
+                <a href="/index.html#socials">Contact Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="first_screen">
+        <div class="title-container">
+            <a href="#" aria-label="Events link">
+                <span data-text="E">E</span>
+                <span data-text="V">V</span>
+                <span data-text="E">E</span>
+                <span data-text="N">N</span>
+                <span data-text="T">T</span>
+                <span data-text="S">S</span>
+            </a>
+            </div>
+    
+            <div class="filter-buttons" role="group" aria-label="Event filter buttons">
+                <button class="filter-btn active" data-section="all">All Events</button>
+                <button class="filter-btn" data-section="ongoing">Ongoing</button>
+                <button class="filter-btn" data-section="upcoming">Upcoming</button>
+                <button class="filter-btn" data-section="past">Past Events</button>
+            </div>
+    </section>
+    
+    <section class="events-section up" aria-label="Ongoing events">
+        <h2 class="section-title">Ongoing Events</h2>
+        <div class="timeline">
+            <article class="timeline-item">
+                <div class="event-card ongoing">
+                    <h3 class="event-title">CodeVolt '25</h3>
+                    <p class="event-info"><strong>Date:</strong> March 3-4, 2025</p>
+                    <p class="event-info"><strong>Duration:</strong> 48 Hrs</p>
+                    <p class="event-description">A 48-hour hackathon fostering innovation, problem-solving, collaboration, and career opportunities.</p>
+                    <div class="event-actions">
+                        <a href="https://codevolt.rapteehv.com/register" class="action-btn register-btn">
+                            Register Now
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+                        <button class="action-btn share-btn" aria-label="Share event">
+                            <i class="ri-share-line"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="event-card ongoing">
+                    <h3 class="event-title">CryptoClash CTF</h3>
+                    <p class="event-info"><strong>Date:</strong> March 24-25, 2025</p>
+                    <p class="event-info"><strong>Duration:</strong> 48 Hrs</p>
+                    <p class="event-description">CryptoClash CTF challenges participants in OSINT, web exploitation, forensics, and binary exploitation.</p>
+                    <div class="event-actions">
+                        <a href="https://cryptoclashctf.vercel.app/" class="action-btn register-btn">
+                            Register Now
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+                        <button class="action-btn share-btn" aria-label="Share event">
+                            <i class="ri-share-line"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="events-section dw" aria-label="Upcoming events">
+        <h2 class="section-title">Upcoming Events</h2>
+        <div class="timeline">
+            <article class="timeline-item">
+                <div class="event-card upcoming">
+                    <h3 class="event-title">Makeathon</h3>
+                    <p class="event-info"><strong>Date:</strong> September 2025</p>
+                    <p class="event-info"><strong>Duration:</strong> 24 Hrs</p>
+                    <p class="event-description">A Makeathon is a collaborative event where teams innovate, prototype, and solve challenges, emphasizing creativity, hands-on learning, and competition.</p>
+                    <div class="event-meta">
+                        <span class="event-tag">Registration Deadline: Jan 5, 2025</span>
+                        <span class="event-tag">Prerequisites: Programming Basics</span>
+                    </div>
+                    <div class="event-actions">
+                        <a href="#register" class="action-btn register-btn">
+                            Register Now
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+                        <button class="action-btn reminder-btn">
+                            <i class="ri-notification-line"></i>
+                            Set Reminder
+                        </button>
+                        <button class="action-btn share-btn" aria-label="Share event">
+                            <i class="ri-share-line"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="events-section up" aria-label="Past events">
+        <h2 class="section-title">Past Events</h2>
+        <div class="timeline">
+            <article class="timeline-item">
+                <div class="event-card past">
+                    <h3 class="event-title">Robotica</h3>
+                    <p class="event-info"><strong>Date:</strong> February 7-8, 2025</p>
+                    <p class="event-info"><strong>Details:</strong> Project competition</p>
+                    <p class="event-description">Robotica’25 ain’t just a competition; it’s a celebration of innovation and creativity in the realm of robotics. Building on the success of our previous competitions, where we welcomed over 2500+ participants from 80+ schools across the state, this year aims to surpass all expectations.</p>
+                </div>
+                <div class="event-card past">
+                    <h3 class="event-title">Winter Workshop Series</h3>
+                    <p class="event-info"><strong>Date:</strong> December 25-30, 2024</p>
+                    <p class="event-info"><strong>Details:</strong> Workshop & Hackathon</p>
+                    <p class="event-description">The Winter Series workshop series offers hands-on learning across four key topics: web development, line-following robotics, maze-solving algorithms, and game development, helping participants build essential skills in technology and innovation.</p>
+                </div>
+                <div class="event-card past">
+                    <h3 class="event-title">Car Building Workshop</h3>
+                    <p class="event-info"><strong>Date:</strong> September 28, 2024</p>
+                    <p class="event-info"><strong>Details:</strong> Workshop</p>
+                    <p class="event-description">The Winter Series workshop series offers hands-on learning across four key topics: web development, line-following robotics, maze-solving algorithms, and game development, helping participants build essential skills in technology and innovation.</p>
+                </div>
+                <div class="event-card past">
+                    <h3 class="event-title">Drone Building Workshop</h3>
+                    <p class="event-info"><strong>Date:</strong> September 22, 2024</p>
+                    <p class="event-info"><strong>Details:</strong> Workshop</p>
+                    <p class="event-description">The Winter Series workshop series offers hands-on learning across four key topics: web development, line-following robotics, maze-solving algorithms, and game development, helping participants build essential skills in technology and innovation.</p>
+                </div>
+                <div class="event-card past">
+                    <h3 class="event-title">Arduino Rev-Up 2</h3>
+                    <p class="event-info"><strong>Date:</strong> September 13-14, 2024</p>
+                    <p class="event-info"><strong>Details:</strong> Workshop</p>
+                    <p class="event-description">The Robotics Club hosted Arduino Rev-Up 2, expanding on the basics covered in Rev-Up 1. In addition to fundamental Arduino concepts, participants learned to integrate sensors like ultrasonic, DHT11, moisture, and LDR, along with *16×2 LCD displays* for data visualization.</p>
+                </div>
+                <div class="event-card past">
+                    <h3 class="event-title">Arduino Rev-Up 1</h3>
+                    <p class="event-info"><strong>Date:</strong> August 15-18, 2024</p>
+                    <p class="event-info"><strong>Details:</strong> Workshop</p>
+                    <p class="event-description">Arduino Rev-Up 1 introduced students to Arduino fundamentals, microcontroller architecture, and sensor integration. Through hands-on exercises like the blink function, participants gained practical experience in embedded systems, preparing them for advanced robotics and automation projects.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+
+<!-- Footer Section -->
+
+<section class="active-section">
+    <!-- Top Section: Stats -->
+    <div class="fottop">
+        <div class="heading">
+            <h1 class="doa">Discover Our Activeness</h1>
+        </div>
+        <div class="stats-container">
+            <div class="stat-item">
+                <h2 class="zoom-effect">175+</h2>
+                <p>Members</p>
+            </div>
+            <div class="stat-item">
+                <h2 class="zoom-effect">75+</h2>
+                <p>Projects Completed</p>
+            </div>
+            <div class="stat-item">
+                <h2 class="zoom-effect">6</h2>
+                <p>Departments</p>
+            </div>
+            <div class="stat-item">
+                <h2 class="zoom-effect">15+</h2>
+                <p>Ongoing Projects</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Divider -->
+    <hr>
+
+    <!-- Bottom Section -->
+    <div class="bottom-container">
+        <!-- Left Section: Logos -->
+        <div class="logo-section">
+            <img src="assets/rc.png" alt="Logo 1">
+            <img src="assets/vitc.png" alt="Logo 2">
+            <p>Official Website of Robotics Club<br>VIT Chennai</p>
+        </div>
+
+        <!-- Middle Section: Navigation -->
+        <div class="nav-section">
+            <a href="/index.html" class="nav-btn">Home</a>
+            <a href="/events_page.html" class="nav-btn">Events</a>
+            <a href="/mem.html" class="nav-btn">Members</a>
+            <a href="/index.html#about" class="nav-btn">About Us</a>
+            <a href="/inds.html" class="nav-btn">Industrial</a>
+            <a href="/dept.html" class="nav-btn">Departments</a>
+        </div>
+
+        <!-- Right Section: Recruitment -->
+        <div class="recruit-section">
+            <h3>Recruitment for the Club</h3>
+            <div class="mail-btn">
+                <button id="mailUsBtn">Mail Us</button>
+            </div>
+            <p class="quote">
+                "The best way to predict the future is to create it." <br> <span class="al"> ~Abraham Lincoln</span>
+            </p>
+            <p>Join the Robotics Club to explore the realms of innovation, creativity, and technology. Share your skills, collaborate and contribute to our mission of engineering excellence.</p>
+            
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; Robotics Club | All Rights Reserved
+    </footer>
+</section>
+
+
+<script>document.getElementById("mailUsBtn").addEventListener("click", function () {
+    const mailToLink = "mailto:roboticsclub@example.com?subject=Recruitment%20Inquiry&body=Hi%20there!%20I'm%20interested%20in%20joining%20the%20club.%20Please%20find%20my%20details%20below.";
+    window.location.href = mailToLink;
+});</script>
+    <script src="js/index.js"></script>
+</body>
+</html>
